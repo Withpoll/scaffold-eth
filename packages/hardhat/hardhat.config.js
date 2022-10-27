@@ -22,7 +22,7 @@ const { isAddress, getAddress, formatUnits, parseUnits } = utils;
 //
 // Select the network you want to deploy to here:
 //
-const defaultNetwork = "localhost";
+const defaultNetwork = "condor";
 
 function mnemonic() {
   try {
@@ -58,6 +58,14 @@ module.exports = {
   // Follow the directions, and uncomment the network you wish to deploy to.
 
   networks: {
+    condor: {
+      url: "https://testnet.condor.systems/rpc",
+      gasPrice: 1000000000,
+      chainId: 188881,
+      accounts: {
+        mnemonic: mnemonic(),
+      },
+    },
     localhost: {
       url: "http://localhost:8545",
       /*
