@@ -54,7 +54,7 @@ const { ethers } = require("ethers");
 */
 
 /// 📡 What chain are your contracts deployed to?
-const initialNetwork = NETWORKS.condor; // <------- select your target frontend network (localhost, goerli, xdai, mainnet)
+const initialNetwork = NETWORKS.localhost; // <------- select your target frontend network (localhost, goerli, xdai, mainnet)
 
 // 😬 Sorry for all the console logging
 const DEBUG = true;
@@ -81,7 +81,7 @@ function App(props) {
   const [selectedNetwork, setSelectedNetwork] = useState(networkOptions[0]);
   const location = useLocation();
 
-  const targetNetwork = NETWORKS[selectedNetwork];
+  const targetNetwork = NETWORKS.condor;
 
   // 🔭 block explorer URL
   const blockExplorer = targetNetwork.blockExplorer;
